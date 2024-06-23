@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Investors Management System</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Investor Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/investors}">Investor Management</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  
+  
+    <br>
+    <br>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<div class="text-center" style="font-size: 30px;">Create New Investor</div>
+				<div class="card-body"></div>
+				<form th:action="@{/investors}" th:object="${investor}" method="POST">
+
+					<div class="form-group">
+						<label>Share Name</label> <input type="text"
+							name="Share Name" th:field="*{ShareName}" class=" form-control"
+							placeholder="Enter Share Name">
+					</div>
+
+					<div class="form-group">
+						<label>Share Price</label> <input type="text"
+							name="SharePrice" th:field="*{SharePrice}" class=" form-control"
+							placeholder="Enter Share Price">
+					</div>
+
+					<div class="form-group">
+						<label>No Of Share </label> <input type="text" name="NoOfShare"
+							th:field="*{NoOfShare}" class=" form-control"
+							placeholder="Enter No Of Share">
+					</div>
+					
+					<div class="form-group">
+						<label>Total Price</label> <input type="text" name="Total Price"
+							th:field="*{TotalPrice}" class=" form-control"
+							placeholder="Enter Total Price">
+					</div>
+					
+					<div class="form-group">
+						<label>Issue Date </label> <input type="date" name="IssueDate"
+							th:field="*{IssueDate}" class=" form-control"
+							placeholder="Issue Date">
+					</div>
+
+					<div class="box-footer">
+
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
